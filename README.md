@@ -64,101 +64,51 @@
 
 
 
-
-Staff (
-
-Staff_id primary_key,
-
-FName VARCHAR(50) ,
-
-LName VARCHAR(50) ,
-
-Patronymic varchar(50),
-
-Divisions_id varchar(50),
-
-Structura_id varchar(50),
-
-Date_off_id datetime,
-
-Position_id varchar(50),
-
-Salary_id numeric,
-
-Address_id VARCHAR(50),
-
-Project_id VARCHAR(50),
-
+Сотрудники (
+   
+   - ID сотрудника [INTEGER, PRIMARY KEY, UNIQUR INDEX]
+   - Фамилия Сотрудника [NVARCHAR(255)]
+   - Имя Сотрудника [NVARCHAR(255)]
+   - Отчество Сотрудника [NVARCHAR(255)]
+   - ID Должности [INTEGER]
+   - Дата найма [DATE]
+   - ID Филиала [INTEGER]
 )
 
-Salary (
-
-Salary_id primary_key
-
-Pay numeric
-
+Должности (
+   - ID Должности [INTEGER, PRIMARY KEY, UNIQUE INDEX]
+   - ID Структурного подразделения [INTEGER]
+   - Должность [NVARCHAR(255)]
 )
 
-Position (
-
-Position_id primary_key
-
-Spethion_type
-
+Типы подразделений (
+   - ID Типа подразделения [INTEGER, PRIMARY KEY, UNIQUE INDEX]
+   - Тип подразделения [NVARCHAR(255)]
 )
 
-Divisions (
-
-Divisions_id primary_key
-
-Department varchar(50)
-
-Unit Group varchar(50)
-
-Unit Group_type
-
-Department_type
-
+Проекты (
+   - ID Проекта [INTEGER, PRIMARY KEY, UNIQUE INDEX]
+   - Название проекта [NVARCHAR(255)]
 )
 
-Structura (
-
-Structura_id primary_key
-
-Group varchar(50)
-
-Structura_type
-
-Structura_title
-
+Прикрепление к проектам (
+   - ID Прикрепления [INTEGER, PRIMARY KEY, UNIQUE INDEX]
+   - ID Проекта [INTEGER]
 )
 
-Date_off_Employee )
-
-Date_off_id primary_key
-
-Date datetime
-
-(
-
-Branch address (
-
-Address_id primary_key
-
-Edge VARCHAR(50)
-
-City VARCHAR(50)
-
-Street VARCHAR(50)
-
-House VARCHAR(50)
-
+Структурные подразделения (
+   - ID Структурного подразделения [INTEGER, PRIMARY KEY, UNIQUE INDEX]
+   - ID Типа подразделения [INTEGER]
+   - Название структурного подразделения [NVARCHAR(255)]
 )
 
-Project (
+Город (
+   - ID Города [INTEGER, PRIMARY KEY, UNIQUE INDEX]
+   - Город [NVARCHAR(255)]
+)
 
-Project_id primary_key
-
-Project_type
-
+Филиал (
+   - ID Филиала [INTEGER, PRIMARY KEY, UNIQUE INDEX]
+   - ID Города [INTEGER]
+   - Адреc [NVARCHAR(255)]
 )
